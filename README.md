@@ -24,3 +24,7 @@ painting App을 통해 Javascript 기초 복습!
     - **context stroke**를 통해 이어진 선에 색과 두께를 입힌다. (stroke가 선언 됬을 때 비로소 선이 보이게 된다.)
     - 계속 새로운 lineTo를 선언하면서 짧은 직선을 통해 이어지는 선을 만들어 하나의 선으로 보이게 된다.
     - **addEventListener** 를 통해 canvas에 마우스 이벤트를 추가하기
+
+2. **Stroke Color** 설정하기 
+    - **Array.from**을 통해 Color element 객체를 배열로 변환 해준다.
+    - Color element별 이벤트 리스너를 통해 **click**시 stroke의 색상을 변경시켜 준다.
