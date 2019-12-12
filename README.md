@@ -36,3 +36,7 @@ painting App을 통해 Javascript 기초 복습!
     - fill 버튼을 누르면 paint로, paint 버튼을 누르면 fill로 바뀌도록 **if** 설정을 한다.
     - **fillRect**를 통해 **fillStyle**로 선택된 색상을 canvas 가득 채운다.
     - filling이 true인 경우에만 동작하도록 설정한다. 
+
+5. **Save** 설정하기
+    - **canvas.toDataURL**을 통해 해당 canvas의 파일 URL 얻기
+    - 임시 link(a 태그)를 이용해 **href**와 **download** 설정하기

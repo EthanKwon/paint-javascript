@@ -3,11 +3,15 @@ const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("js-color");
 const range = document.querySelector("#js-range");
 const mode = document.querySelector("#js-mode");
+const save = document.querySelector("#js-save");
 
 const DEFUALT_COLOR = "#2c2c2c";
 
 canvas.width = 700;
 canvas.height = 700;
+
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 ctx.strokeStyle = DEFUALT_COLOR;
 ctx.fillStyle = DEFUALT_COLOR;
@@ -42,12 +46,17 @@ function fillColor() {
   if (filling) ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
+function handleCM(event) {
+  event.preventDefault();
+}
+
 if (canvas) {
   canvas.addEventListener("mousemove", onMouseMove);
   canvas.addEventListener("mousedown", onMouseDown);
   canvas.addEventListener("mouseup", stopPainting);
   canvas.addEventListener("mouseleave", stopPainting);
   canvas.addEventListener("click", fillColor);
+  canvas.addEventListener("contextmenu", handleCM);
 }
 
 function handleColorChange(event) {
@@ -71,6 +80,14 @@ function handleModeClick() {
   }
 }
 
+function handleSaveClick() {
+  const image = canvas.toDataURL();
+  const link = document.createElement("a");
+  link.href = image;
+  link.download = "image";
+  link.click();
+}
+
 Array.from(colors).forEach(color =>
   color.addEventListener("click", handleColorChange)
 );
@@ -81,4 +98,8 @@ if (range) {
 
 if (mode) {
   mode.addEventListener("click", handleModeClick);
+}
+
+if (save) {
+  save.addEventListener("click", handleSaveClick);
 }
