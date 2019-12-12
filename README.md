@@ -28,3 +28,9 @@ painting App을 통해 Javascript 기초 복습!
 2. **Stroke Color** 설정하기 
     - **Array.from**을 통해 Color element 객체를 배열로 변환 해준다.
     - Color element별 이벤트 리스너를 통해 **click**시 stroke의 색상을 변경시켜 준다.
+
+3. **Brush Size** 설정하기
+    - range element에 **input** 이벤트를 통해 range 변화 시, 해당 값을 사이즈로 가져온다.
+
+4. **Mode** 설정하기
+    - fill 버튼을 누르면 paint로, paint 버튼을 누르면 fill로 바뀌도록 **if** 설정을 한다.
