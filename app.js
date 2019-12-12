@@ -4,10 +4,13 @@ const colors = document.getElementsByClassName("js-color");
 const range = document.querySelector("#js-range");
 const mode = document.querySelector("#js-mode");
 
+const DEFUALT_COLOR = "#2c2c2c";
+
 canvas.width = 700;
 canvas.height = 700;
 
-ctx.strokeStyle = "#2c2c2c";
+ctx.strokeStyle = DEFUALT_COLOR;
+ctx.fillStyle = DEFUALT_COLOR;
 ctx.lineWidth = 2.5;
 
 let painting = false;
@@ -32,7 +35,11 @@ function stopPainting(event) {
 }
 
 function onMouseDown(event) {
-  painting = true;
+  if (!filling) painting = true;
+}
+
+function fillColor() {
+  if (filling) ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 if (canvas) {
@@ -40,11 +47,13 @@ if (canvas) {
   canvas.addEventListener("mousedown", onMouseDown);
   canvas.addEventListener("mouseup", stopPainting);
   canvas.addEventListener("mouseleave", stopPainting);
+  canvas.addEventListener("click", fillColor);
 }
 
 function handleColorChange(event) {
   const color = event.target.style.backgroundColor;
   ctx.strokeStyle = color;
+  ctx.fillStyle = color;
 }
 
 function handleRangeChange(event) {

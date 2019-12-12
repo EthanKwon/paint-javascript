@@ -34,3 +34,5 @@ painting App을 통해 Javascript 기초 복습!
 
 4. **Mode** 설정하기
     - fill 버튼을 누르면 paint로, paint 버튼을 누르면 fill로 바뀌도록 **if** 설정을 한다.
+    - **fillRect**를 통해 **fillStyle**로 선택된 색상을 canvas 가득 채운다.
+    - filling이 true인 경우에만 동작하도록 설정한다. 
