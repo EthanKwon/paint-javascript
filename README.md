@@ -24,3 +24,19 @@ painting App을 통해 Javascript 기초 복습!
     - **context stroke**를 통해 이어진 선에 색과 두께를 입힌다. (stroke가 선언 됬을 때 비로소 선이 보이게 된다.)
     - 계속 새로운 lineTo를 선언하면서 짧은 직선을 통해 이어지는 선을 만들어 하나의 선으로 보이게 된다.
     - **addEventListener** 를 통해 canvas에 마우스 이벤트를 추가하기
+
+2. **Stroke Color** 설정하기 
+    - **Array.from**을 통해 Color element 객체를 배열로 변환 해준다.
+    - Color element별 이벤트 리스너를 통해 **click**시 stroke의 색상을 변경시켜 준다.
+
+3. **Brush Size** 설정하기
+    - range element에 **input** 이벤트를 통해 range 변화 시, 해당 값을 사이즈로 가져온다.
+
+4. **Mode** 설정하기
+    - fill 버튼을 누르면 paint로, paint 버튼을 누르면 fill로 바뀌도록 **if** 설정을 한다.
+    - **fillRect**를 통해 **fillStyle**로 선택된 색상을 canvas 가득 채운다.
+    - filling이 true인 경우에만 동작하도록 설정한다. 
+
+5. **Save** 설정하기
+    - **canvas.toDataURL**을 통해 해당 canvas의 파일 URL 얻기
+    - 임시 link(a 태그)를 이용해 **href**와 **download** 설정하기
